@@ -17,4 +17,11 @@ class AccountTest {
         Assertions.assertThat(account.getBalance()).isEqualTo(1000);
     }
 
+    @Test
+    void 계좌_입금_확인() {
+        Account account = new Account(10000);
+        account.deposit(1000);
+        Assertions.assertThat(account.getBalance()).isEqualTo(11000);
+    }
+
 }
