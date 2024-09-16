@@ -15,6 +15,9 @@ public class Account {
     }
 
     public void deposit(int i) {
+        if (i < 1) {
+            throw new IllegalArgumentException();
+        }
         this.balance += i;
     }
 }
