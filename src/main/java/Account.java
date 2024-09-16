@@ -19,6 +19,9 @@ public class Account {
     }
 
     public void withdraw(NaturalNumber naturalNumber) {
+        if (naturalNumber.getNaturalNumber() > this.balance) {
+            throw new IllegalArgumentException();
+        }
         this.balance -= naturalNumber.getNaturalNumber();
     }
 }
