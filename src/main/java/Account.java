@@ -5,19 +5,16 @@ public class Account {
     public Account() {
     }
 
-    public Account(int i) {
-
-        this.balance = i;
+    public Account(NaturalNumber naturalNumber) {
+        deposit(naturalNumber);
     }
 
     public int getBalance() {
         return balance;
     }
 
-    public void deposit(int i) {
-        if (i < 1) {
-            throw new IllegalArgumentException();
-        }
-        this.balance += i;
+    public void deposit(NaturalNumber naturalNumber) {
+
+        this.balance += naturalNumber.getNaturalNumber();
     }
 }
