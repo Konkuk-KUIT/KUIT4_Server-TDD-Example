@@ -10,9 +10,9 @@ public class Account {
         return new Account(balance);
     }
 
-    public static Account createAccountWithInitialDeposit(Balance balance, NaturalNumber naturalNumber) {
+    public static Account createAccountWithInitialDeposit(Balance balance, NaturalNumber depositAmount) {
         Account account = new Account(balance);
-        account.deposit(naturalNumber);
+        account.deposit(depositAmount);
         return account;
     }
 
