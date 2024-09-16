@@ -1,6 +1,6 @@
 public class Account {
 
-    private int balance;
+    private Balance balance = new Balance();
 
     public Account() {
     }
@@ -10,18 +10,14 @@ public class Account {
     }
 
     public int getBalance() {
-        return balance;
+        return balance.getBalance();
     }
 
     public void deposit(NaturalNumber naturalNumber) {
-
-        this.balance += naturalNumber.getNaturalNumber();
+        this.balance.add(naturalNumber);
     }
 
     public void withdraw(NaturalNumber naturalNumber) {
-        if (naturalNumber.getNaturalNumber() > this.balance) {
-            throw new IllegalArgumentException();
-        }
-        this.balance -= naturalNumber.getNaturalNumber();
+        this.balance.subtract(naturalNumber);
     }
 }
