@@ -23,4 +23,14 @@ class AccountTest {
         assertThat(account.getBalance()).isEqualTo(11000);
     }
 
+    @Test
+    void 계좌_출금_확인() {
+        Account account = new Account(NaturalNumber.from(10000));
+
+        account.withdraw(NaturalNumber.from(1000));
+
+        assertThat(account.getBalance()).isEqualTo(9000);
+    }
+
+
 }
