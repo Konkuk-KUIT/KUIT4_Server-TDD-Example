@@ -17,4 +17,8 @@ public class Account {
 
         this.balance += naturalNumber.getNaturalNumber();
     }
+
+    public void withdraw(NaturalNumber naturalNumber) {
+        this.balance -= naturalNumber.getNaturalNumber();
+    }
 }
