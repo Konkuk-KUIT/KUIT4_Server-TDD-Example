@@ -2,14 +2,18 @@ public class Account {
 
     private Balance balance;
 
-    public Account(Balance balance) {
+    private Account(Balance balance) {
         this.balance = balance;
     }
 
-    public Account(Balance balance, NaturalNumber naturalNumber) {
-        this.balance = balance;
+    public static Account createAccountEmpty(Balance balance) {
+        return new Account(balance);
+    }
 
-        deposit(naturalNumber);
+    public static Account createAccountWithInitialDeposit(Balance balance, NaturalNumber naturalNumber) {
+        Account account = new Account(balance);
+        account.deposit(naturalNumber);
+        return account;
     }
 
     public int getBalance() {
