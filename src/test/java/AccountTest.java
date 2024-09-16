@@ -32,5 +32,11 @@ class AccountTest {
         assertThat(account.getBalance()).isEqualTo(9000);
     }
 
+    @Test
+    void 계좌_출금_잔액_부족_예외() {
+        Account account = new Account(NaturalNumber.from(10000));
 
+        assertThatThrownBy(()-> account.withdraw(NaturalNumber.from(20000)))
+                .isInstanceOf(IllegalArgumentException.class);
+    }
 }
