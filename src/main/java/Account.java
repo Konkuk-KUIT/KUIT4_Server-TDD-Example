@@ -13,4 +13,8 @@ public class Account {
     public int getBalance() {
         return balance;
     }
+
+    public void deposit(int i) {
+        this.balance += i;
+    }
 }
