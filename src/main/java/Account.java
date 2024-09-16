@@ -1,11 +1,14 @@
 public class Account {
 
-    private Balance balance = new Balance();
+    private Balance balance;
 
-    public Account() {
+    public Account(Balance balance) {
+        this.balance = balance;
     }
 
-    public Account(NaturalNumber naturalNumber) {
+    public Account(Balance balance, NaturalNumber naturalNumber) {
+        this.balance = balance;
+
         deposit(naturalNumber);
     }
 
